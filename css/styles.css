@@ -1,0 +1,625 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-image: url("../assets/img/BODY-PC.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  body {
+    background-image: url("../assets/img/Body-Celular.jpg");
+    background-size: cover; /* Asegura que toda la imagen se vea */
+    background-position: top center;
+    background-repeat: repeat-y;
+  }
+  
+}
+
+
+/*Fonts*/
+.luxurious-script-regular {
+  font-family: "Luxurious Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.neuton-extralight {
+  font-family: "Neuton", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.neuton-light {
+  font-family: "Neuton", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.neuton-regular {
+  font-family: "Neuton", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.neuton-bold {
+  font-family: "Neuton", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.neuton-extrabold {
+  font-family: "Neuton", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.neuton-regular-italic {
+  font-family: "Neuton", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Splash */
+.pantalla {
+  height: 1080px;
+  background-image: url(../assets/img/SPLASH-PC-.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  /* margin: 2rem; */
+  font-family: "Parisienne";
+}
+
+@media screen and (max-width: 932px) {
+  .pantalla {
+    background-image: url(../assets/img/SPLASH-CEL.jpg); /* Asegúrate que el nombre esté bien */
+    background-position: center center;
+  }
+}
+
+.pantalla .titulo {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(-30px);
+  color: #DDB301;
+}
+
+#entrarBtn {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+  background-color: #DDB301;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 3rem;
+  cursor: pointer;
+  font-family: "Parisienne";
+  margin-top: 100%;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Overlay del brillo dorado */
+#overlay-brillo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 223, 150, 0.8), #ffd700 40%, #fff6cc 70%);
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  z-index: 10;
+  transition: transform 1.2s ease-out, opacity 0.8s ease-out;
+}
+
+/* Activación del brillo */
+#overlay-brillo.activo {
+  opacity: 1;
+  transform: scale(10);
+}
+
+/* Estilos para sección de mensaje */
+.seccion-principal {
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background-image: url(../assets/img/PRINCIPAL-PC.jpg);
+  background-size: cover;
+  background-position: top center;
+
+  /* Animación */
+  animation: zoomOut 1.2s ease-out both;
+}
+
+.mensaje-contenedor {
+  max-width: 600px;
+  margin: auto;
+  transform: scale(1); /* default */
+}
+
+.mensaje-contenedor h3 {
+  opacity: 0;
+  font-size: 2rem;
+  color: #af7a5d;
+  margin-bottom: 3rem;
+}
+
+.mensaje-contenedor h1 {
+  opacity: 0;
+  font-size: 4rem;
+  color: #af7a5d;
+  margin-bottom: 3rem;
+}
+
+.mensaje-contenedor p {
+  opacity: 0;
+  font-size: 1.1rem;
+  color: #af7a5d;
+  margin-bottom: 0.5rem;
+}
+
+/*Save the Date*/
+.save-the-date {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.save-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.save-the-date h2 {
+  font-family: "Luxurious Script";
+  font-size: 5rem;
+  color: #DDB301;
+  margin-bottom: 4rem;
+}
+
+.save-the-date p {
+  font-family: Neuton;
+  color: #DDB301;
+  margin-bottom: 4rem;
+  font-size: 4rem;
+}
+
+#saveDateBtn {
+  font-family: "Parisienne";
+  padding: 0.75rem 2rem;
+  font-size: 2.5rem;
+  background-color: #DDB301;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#saveDateBtn:hover {
+  background-color: #ac8c01;
+}
+
+/*Ubicaciones*/
+.ubicaciones {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.contenedor-ubicaciones {
+  max-width: 700px;
+  margin: auto;
+}
+
+.ubicaciones h2 {
+  font-family: "Luxurious Script";
+  font-size: 3rem;
+  color: #DDB301;
+  margin-bottom: 2rem;
+}
+
+.evento {
+  background: #ffffff;
+  border: 2px solid #f1e8de;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.evento h3 {
+  font-family: "Neuton";
+  color: #54582f;
+  margin-bottom: 0.5rem;
+  font-size: 2.3rem;
+}
+
+.evento p {
+  font-family: "Neuton";
+  color: #444;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.btn-ubicacion {
+  font-family: "Parisienne";
+  display: inline-block;
+  font-size: 3rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #DDB301;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ubicacion:hover {
+  background-color: #ac8c01;
+}
+
+/*Confirmacion de asistencia*/
+
+.confirmacion {
+  padding: 4rem 1rem;
+  text-align: center;;
+}
+
+.contenedor-confirmacion {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contenedor-confirmacion h2 {
+  font-family: "Luxurious Script";
+  color: #DDB301;
+  margin-bottom: 0.5rem;
+  font-size: 5rem;
+}
+
+.contenedor-confirmacion label {
+  font-family: "Neuton";
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+#invitadoSelect,
+#confirmarBtn {
+  font-family: "Neuton";
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+#confirmarBtn {
+  font-family: "Parisienne";
+  background-color: #DDB301;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Estilos para la sección del resultado QR */
+/* Ocultar por defecto */
+#resultadoQR {
+  display: none; /* Evita que ocupe espacio */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  min-height: 80vh;
+  background: transparent;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+/* Mostrar con animación */
+#resultadoQR.mostrar {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tarjeta con fondo desenfocado */
+.tarjeta-resultado {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#qrCanvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+/*Nueva Galeria de Imagenes*/
+.galeria-confirmacion {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 500px;
+}
+
+.images-galeria {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 800px;
+}
+
+.images-galeria .image {
+  object-fit: cover;
+  object-position: top center;
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  height: 500px;
+  width: 500px;
+  margin-top: 0px;
+  margin-left: 0px;
+  border: 5px solid #fff;
+  border-bottom-width: 15px;
+  box-shadow: 0 2px 5px rgba(30, 30, 30, 0.25);
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotaciones iniciales */
+.images-galeria .image:nth-child(1) { transform: rotate(8deg); }
+.images-galeria .image:nth-child(2) { transform: rotate(2deg); }
+.images-galeria .image:nth-child(3) { transform: rotate(-3deg); }
+.images-galeria .image:nth-child(4) { transform: rotate(-10deg); }
+.images-galeria .image:nth-child(5) { transform: rotate(-5deg); }
+
+/* Hover efecto */
+.images-galeria:hover .image:nth-child(4) { transform: rotate(10deg) translateX(50px); }
+.images-galeria:hover .image:nth-child(3) { transform: rotate(3deg) translateX(75px); }
+.images-galeria:hover .image:nth-child(2) { transform: rotate(-2deg) translateX(-50px); }
+.images-galeria:hover .image:nth-child(1) { transform: rotate(-8deg) translateX(-75px) translateY(-10px); }
+
+.images-galeria .image.slide-right { transform: rotate(290deg) translateX(250px); }
+.images-galeria .image.slide-left  { transform: rotate(-290deg) translateX(-250px); }
+.images-galeria .image.back        { z-index: 1; }
+
+/* Responsive */
+@media (max-width: 500px) {
+  .images-galeria {
+    height: 200px;
+  }
+  .images-galeria .image {
+    width: 280px;
+    height: 280px;
+    margin-left: -30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+/*Codigo de Vestimenta*/
+.codigo-vestimenta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  background: transparent;
+}
+
+.contenedor-vestimenta {
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contenedor-vestimenta h2 {
+  font-family: "Parisienne";
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #DDB301;
+}
+
+.iconos-vestimenta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconos-vestimenta img {
+  width: 150px;
+  height: auto;
+}
+
+.disclaimer {
+  font-family: "Neuton";
+  font-size: 1.5rem;
+  color: white;
+  background-color: #DDB301;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-style: italic;
+}
+
+/*Boton de Musica*/
+.audio-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s;
+}
+
+.audio-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.audio-btn:focus {
+  outline: none;
+}
+
+/*Extras*/
+.seccion-homenaje, .seccion-regalos {
+  font-family: "Luxurious Script";
+  padding: 4rem 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  color: #fff;
+}
+
+.seccion-homenaje h2, .seccion-regalos h2 {
+  color: #ffd700;
+  font-family: "Neuton";
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.seccion-homenaje p {
+  font-family: "Neuton";
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.homenaje-lista {
+  font-family: "Neuton";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.persona h3 {
+  font-family: "Luxurious Script";
+  color: #ffd700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.opciones-regalo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.opcion h3 {
+  font-family: "Luxurious Script";
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.opcion a {
+  color: #DDB301;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.opcion p {
+  font-family: "Neuton";
+  color: #fff;
+  font-size: 2rem;
+}
+
+.frase {
+  font-family: "Neuton";
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 932px) {
+  .seccion-principal {
+    background-image: url(../assets/img/PRINCIPAL-CEL.png); /* imagen optimizada para mobile */
+    background-size: contain;
+    background-position: top center;
+    justify-content: center; /* centra el contenido horizontalmente si prefieres */
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 932px) {
+  .seccion-principal {
+    animation: zoomOut 0.9s ease-out both;
+  }
+}
+
+
+/*Seccion de Animaciones*/
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

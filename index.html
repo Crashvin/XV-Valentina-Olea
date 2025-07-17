@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitación XV Años Valeria</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+<!--Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Parisienne&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <!-- Splash Animado -->
+  <section id="splash" class="pantalla">
+    <div class="contenido">
+      <!-- <h1 class="titulo">Estás cordialmente invitado...</h1> -->
+      <button id="entrarBtn">Abrir Invitación</button>
+    </div>
+    <div id="overlay-brillo"></div>
+  </section>
+
+  <!-- Contenido Principal -->
+  <main id="contenido" class="oculto">
+
+    <section id="mensaje-principal" class="seccion-principal">
+  <div class="mensaje-contenedor">
+    <h3>¡Mis 15 Años!</h3>
+    <br>
+    <h1>Valentina Olea</h1>
+    <br>
+    <p><strong>Quince años soñando con este momento</strong></p>
+  </div>
+</section>
+
+    <!-- Aquí se agregará todo lo demás -->
+
+    <section class="galeria-confirmacion" id="galeria-1">
+      <div class="images-galeria" data-galeria="galeria-1">
+        <img class="image" src="assets/img/img1.jpeg" alt="Imagen 1">
+        <img class="image" src="assets/img/img2.jpeg" alt="Imagen 2">
+        <img class="image" src="assets/img/img3.jpeg" alt="Imagen 3">
+        <img class="image" src="assets/img/img4.jpeg" alt="Imagen 4">
+        <img class="image" src="assets/img/img5.jpeg" alt="Imagen 5">
+      </div>
+    </section>
+
+<!--Seccion Papas y Padrinos-->
+<section class="seccion-homenaje">
+  <div class="contenedor-homenaje">
+    <h2>Papás & Padrinos</h2>
+    <p>Con todo nuestro amor y agradecimiento, dedicamos esta celebración a quienes han sido guía, apoyo y bendición en la vida de nuestra quinceañera.</p>
+    
+    <div class="homenaje-lista">
+      <div class="persona">
+        <h3>Papás</h3>
+        <p>Nombre del Papá</p>
+        <p>Nombre de la Mamá</p>
+      </div>
+      <div class="persona">
+        <h3>Padrinos</h3>
+        <p>Nombre del Padrino</p>
+        <p>Nombre de la Madrina</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="save-the-date">
+  <div class="save-container">
+    <h2>¡No pierdas el día la Fecha!</h2>
+    <p>Agosto <br>Sabado 16 3:00pm</p>
+    <button id="saveDateBtn">Guardar en mi Calendario</button>
+  </div>
+</section>
+
+<section class="ubicaciones">
+  <div class="contenedor-ubicaciones">
+    <h2>Ubicación del Evento</h2>
+
+    <!-- Misa -->
+    <div class="evento">
+      <h3>Misa</h3>
+      <p><strong>Hora:</strong> 1:40 PM</p>
+      <p><strong>Ubicación:</strong> Monasterio de las madres clarisas de Tehuacán</p>
+      <a
+        href="https://maps.app.goo.gl/hAvayuscpgw1u4rGA"
+        target="_blank"
+        class="btn-ubicacion"
+      >
+        Ver Mapa
+      </a>
+    </div>
+
+    <!-- Salón -->
+    <div class="evento">
+      <h3>Salón</h3>
+      <p><strong>Hora:</strong> 3:00 PM</p>
+      <p><strong>Ubicación:</strong> Villafontana, Tehuacán,Puebla </p>
+      <a
+        href="https://maps.app.goo.gl/E9kfdnSU2S2jFtzP6"
+        target="_blank"
+        class="btn-ubicacion"
+      >
+        Ver Mapa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Confirmación -->
+<section class="confirmacion">
+  <div class="contenedor-confirmacion">
+    <h2>Confirma tu Asistencia</h2>
+
+    <label for="invitadoSelect">Selecciona tu nombre:</label>
+    <select id="invitadoSelect">
+      <option disabled selected>Elige tu nombre</option>
+    </select>
+
+    <button id="confirmarBtn">Confirmar asistencia</button>
+  </div>
+</section>
+
+<!-- Sección de Resultado QR -->
+<section id="resultadoQR" class="oculto">
+  <div class="contenedor-confirmacion tarjeta-resultado">
+    <h3>✅ ¡Asistencia confirmada!</h3>
+    <p><strong>Pases válidos:</strong> <span id="pasesQR"></span></p>
+    <p><strong>Mensaje:</strong> <span id="mensajeQR"></span></p>
+    <div id="qrCanvas" style="margin: 1rem 0;"></div>
+    <button id="descargarQR">Descargar QR</button>
+  </div>
+</section>
+
+<!--Mesa de Regalos y Lluvia de Sobres-->
+<section class="seccion-regalos">
+  <div class="contenedor-regalos">
+    <h2>Mesa de Regalos & Lluvia de Sobres</h2>
+    <p class="frase">"Lo más importante es tu presencia, pero si deseas tener un detalle especial, aquí te dejamos algunas opciones."</p>
+
+    <div class="opciones-regalo">
+      <div class="opcion">
+        <h3>Lluvia de Sobres</h3>
+        <p>Habrá un espacio especial durante el evento para dejar tu sobre con cariño.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Nueva Galeria de Imagenes-->
+<section class="galeria-confirmacion" id="galeria-2">
+  <div class="images-galeria" data-galeria="galeria-2">
+    <img class="image" src="assets/img/foto1.jpeg" alt="Otra imagen 1">
+    <img class="image" src="assets/img/foto2.jpeg" alt="Otra imagen 2">
+    <img class="image" src="assets/img/foto3.jpeg" alt="Otra imagen 3">
+    <img class="image" src="assets/img/foto4.jpeg" alt="Otra imagen 4">
+    <img class="image" src="assets/img/foto5.jpeg" alt="Otra imagen 5">
+    <img class="image" src="assets/img/foto6.jpeg" alt="Otra imagen 6">
+    ...
+  </div>
+</section>
+
+<!--Seccion de Vestimenta-->
+<section class="codigo-vestimenta">
+  <div class="contenedor-vestimenta">
+    <h2>Código de Vestimenta</h2>
+    <div class="iconos-vestimenta">
+      <img src="assets/img/moda.png" alt="Traje" />
+      <!-- <img src="vestido-icono.png" alt="Vestido" /> -->
+    </div>
+    <h2>! Formal !</h2>
+    <p class="disclaimer">
+      Por favor, evita vestir color <strong>verde</strong> en cualquiera de sus tonalidades.
+    </p>
+  </div>
+</section>
+
+<!-- Botón de audio fijo -->
+<button id="audioToggle" class="audio-btn" aria-label="Reproducir audio">
+  <span id="audioIcon">▶️</span>
+</button>
+
+<!-- Audio oculto -->
+<audio id="backgroundAudio" loop>
+  <source src="assets/music/Beautiful Boy (Darling Boy) (Ultimate Mix).MP3" type="audio/mpeg" />
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+
+  </main>
+
+  <!-- Librerías -->
+  <!-- GSAP desde CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="libs/qrcode.min.js"></script>
+  <script src="libs/ics.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/calendario.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!--Galeria Nueva-->
+  <script>
+document.querySelectorAll('.images-galeria').forEach(images => {
+  const cssTransition = () => {
+    const style = (document.body || document.documentElement).style;
+    return ['transition', 'WebkitTransition', 'MozTransition', 'OTransition']
+      .some(prop => typeof style[prop] === 'string');
+  };
+
+  let queue = false;
+  const touch = 'ontouchstart' in document.documentElement;
+  const imageWidth = images.firstElementChild.offsetWidth;
+  const imageOffset = images.firstElementChild.offsetLeft;
+  const timeout = cssTransition() ? [300, 400] : [0, 0];
+
+  images.addEventListener(touch ? 'touchend' : 'click', function(event) {
+    if (queue) return;
+    queue = true;
+
+    const x = touch ? event.changedTouches[0].pageX : event.pageX;
+    const direction = (x - imageOffset) > imageWidth / 2 ? 'slide-right' : 'slide-left';
+    const lastImage = images.lastElementChild;
+
+    lastImage.classList.add(direction);
+
+    setTimeout(() => {
+      lastImage.classList.remove(direction);
+      lastImage.classList.add('back');
+      setTimeout(() => {
+        images.insertBefore(lastImage, images.firstElementChild);
+        lastImage.classList.remove('back');
+        queue = false;
+      }, timeout[0]);
+    }, timeout[1]);
+  });
+});
+</script>
+
+<!--Boton de Musica-->
+<script>
+  const audio = document.getElementById('backgroundAudio');
+  const toggleBtn = document.getElementById('audioToggle');
+  const icon = document.getElementById('audioIcon');
+
+  let isPlaying = false;
+  let hasStarted = false;
+
+  function playAudio() {
+    if (!hasStarted) {
+      audio.play().then(() => {
+        isPlaying = true;
+        icon.textContent = '⏸️';
+        hasStarted = true;
+      }).catch(e => {
+        console.log("Reproducción bloqueada por el navegador hasta interacción.");
+      });
+    }
+  }
+
+  // Iniciar después del primer clic en cualquier parte del sitio
+  document.addEventListener('click', playAudio, { once: true });
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Para que el botón no dispare el primer clic general
+    if (isPlaying) {
+      audio.pause();
+      icon.textContent = '▶️';
+    } else {
+      audio.play();
+      icon.textContent = '⏸️';
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
+
+
+</body>
+</html>
